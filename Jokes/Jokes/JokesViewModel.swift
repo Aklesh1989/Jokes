@@ -26,7 +26,7 @@ class JokesViewModel: JokesViewModelProtocol {
     
     func startFetchingJokes() {
         timer?.invalidate()   // just in case you had existing `Timer`, `invalidate` it before we lose our reference to it
-        timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
             self?.fetchJokes()
         }
         
